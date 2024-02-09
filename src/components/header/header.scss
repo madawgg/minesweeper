@@ -1,0 +1,30 @@
+header {
+  min-width: 100%;
+  margin: 0;
+  height: 200px;
+  background-color: #0d0301df;
+  line-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+  h1 {
+    color: #e1861ff5;
+    font-size: 60px;
+    margin-top: 0;
+    padding-top: 40px;
+    letter-spacing: .9rem;
+
+  }
+
+  p {
+    color: #d0a031;
+    font-size: 32px;
+    letter-spacing: .65rem;
+    font-weight: bold;
+
+  }
+
+}
