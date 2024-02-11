@@ -54,15 +54,18 @@ const Game = () => {
             setGameStatus('win');
           }
         } else {
-          board.defuse(row, column);
+          if (!board.isFlagged(row, column)) {
+            board.defuse(row, column);
 
-          if (!board.canBeDefused(row, column)) {
-            setGameStatus('lose');
-          }
-          if (board.getWinStatus()) {
-            setGameStatus('win');
+            if (!board.canBeDefused(row, column)) {
+              setGameStatus('lose');
+            }
+            if (board.getWinStatus()) {
+              setGameStatus('win');
+            }
           }
         }
+
 
         setBoard({ ...board });
 
@@ -72,6 +75,9 @@ const Game = () => {
       }
     }
   }
+  // useEffect(() => {
+  //   console.log(gameStatus)
+  // }, [gameStatus]);
   useEffect(() => {
     if (gameStatus === 'exploring...') {
       const interval = setInterval(() => {
@@ -113,13 +119,15 @@ const Game = () => {
 
               <label
                 htmlFor="levelSelect"
-                className='info'> Tiempo: {time}
+                className='info'> Time: {time}
               </label>
+
               <article className='gameLevel'>
+
                 <label
                   htmlFor="levelSelect"
                   className='info'
-                > Level:
+                > Level
                 </label>
 
                 <select
@@ -132,13 +140,12 @@ const Game = () => {
                 </select>
 
               </article>
-
               <Button
                 className='gameButton resetButton'
                 onClick={resetGame}
                 text={'New Board'}
               />
-
+              <br />
               <p>Current Mode: {mode} </p>
               <Button
                 className='gameButton changeButton'

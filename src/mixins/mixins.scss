@@ -1,0 +1,31 @@
+$breakpoints: (
+  mobile: 319px,
+  tablet: 750px,
+  desktop: 1023px,
+  desktop-large: 1439px
+);
+
+@mixin for-size($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin basic-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin finalView {
+  @include basic-flexbox;
+  position: relative;
+  flex-direction: column;
+  width: 550px;
+  height: 100%;
+  color: #e9eee9;
+  line-height: 1.3rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  opacity: .8;
+}

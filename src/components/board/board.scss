@@ -1,11 +1,12 @@
+@import '../../mixins/mixins.scss';
+
 .board {
+  @include basic-flexbox;
   width: max-content;
   padding: 0.3rem;
   background-color: rgba(248, 201, 46, 0.653);
   border: #ffffff 1px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   margin: 0 auto;
 }
 

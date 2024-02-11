@@ -73,7 +73,9 @@ export default class Board {
   cellHasMine(row, column) {
     return this.mines?.some(mine => mine.row === row && mine.column === column);
   }
-
+  isFlagged = (row, column) => {
+    return this.getCellBy(row, column).flagged;
+  }
   /**
    * Whether the cell present at [row[column]] can be defused or not (has a mine or not)
    * @param {number} row 
@@ -217,7 +219,9 @@ export default class Board {
   defuse = (row, column) => {
     let cell = this.getCellBy(row, column);
     const totalCells = this.columns.length * this.columns[0].length;
+
     if (!cell.flagged) {
+
       if (cell.hasMine) {
         this.exploded(row, column);
         return this;

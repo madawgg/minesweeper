@@ -2,7 +2,7 @@ import './footer.scss'
 const Footer = () => {
   return (
     <footer>
-      <p>Footer</p>
+      <h2>2023/2024</h2>
     </footer>
   );
 };

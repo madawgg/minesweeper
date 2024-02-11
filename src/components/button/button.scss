@@ -1,0 +1,22 @@
+@import '../../mixins/mixins.scss';
+
+button {
+  background-color: rgb(146, 90, 21);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0px 0px 0px 2px #f3cd239f;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #f3cd2376;
+    color: #000000;
+  }
+
+  &:active {
+    background-color: #f2e598;
+    color: #000000;
+    transition-duration: 0.2s;
+  }
+}
