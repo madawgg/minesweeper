@@ -119,7 +119,7 @@ const Game = () => {
 
               <label
                 htmlFor="levelSelect"
-                className='info'> Time: {time}
+                className='timer'> Time <br /> <span>{time}</span>
               </label>
 
               <article className='gameLevel'>
@@ -133,10 +133,12 @@ const Game = () => {
                 <select
                   id="levelSelect"
                   onChange={(e) => setLevel(e.target.value)}
+                  value={level}
+
                 >
-                  <option value='0'>Easy</option>
-                  <option value='1'>Medium</option>
-                  <option value='2'>Hard</option>
+                  <option value='0' >Easy</option>
+                  <option value='1' >Medium</option>
+                  <option value='2' >Hard</option>
                 </select>
 
               </article>
@@ -146,7 +148,7 @@ const Game = () => {
                 text={'New Board'}
               />
               <br />
-              <p>Current Mode: {mode} </p>
+              <p>Current Mode: <span className='currentMode'>{mode}</span></p>
               <Button
                 className='gameButton changeButton'
                 onClick={changeMode}

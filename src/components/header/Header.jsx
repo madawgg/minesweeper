@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <header>
       <h1>Hungry Lions</h1>
-      <p>Feed the lions or be the food!</p>
+      <p>Feed the lions or be the food</p>
     </header>
   );
 };

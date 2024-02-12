@@ -1,24 +1,26 @@
 @import '../../mixins/mixins.scss';
 
+
 header {
   @include basic-flexbox;
   margin: 0;
+  text-align: center;
   min-width: 100%;
   height: 200px;
   background-color: #0d0301df;
   line-height: 1rem;
   flex-direction: column;
 
+
   @include for-size(mobile) {
     height: 300px;
     line-height: 3rem;
-    text-align: center;
+
   }
 
   @include for-size(tablet) {
     height: 300px;
     line-height: 3rem;
-    text-align: center;
   }
 
   h1 {
@@ -35,7 +37,6 @@ header {
     font-size: 32px;
     letter-spacing: .65rem;
     font-weight: bold;
-
   }
 
 }

@@ -1,4 +1,6 @@
 @import '../mixins/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+
 
 $color: #ffffff;
 
@@ -7,17 +9,19 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-width: max-content;
+  min-width: min-content;
   box-sizing: border-box;
+  font-family: 'Protest Revolution', 'Courier New', Courier, monospace;
 }
 
 .rotate-device {
-  display: block;
-  position: fixed;
+  @include basic-flexbox;
+  flex-direction: column;
   text-align: center;
   color: $color;
   font-size: 2.2vh;
-  margin: 10px;
+  margin: 0 auto;
+  padding-top: 2%;
   min-width: 300px;
   max-width: 400px;
 }
@@ -56,23 +60,20 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  gap: 10px;
-  margin: 0%auto;
-  padding: 10px;
   color: $color;
   background-color: #2f2e2e9b;
   border: 1px solid #f89204;
   border-radius: 5px;
   font-size: 22px;
   box-shadow: 0 0 10px #f3ae0f;
-
+  min-width: 500px;
 
   @include for-size(mobile) {
-    max-width: 51%;
+    max-width: 53%;
   }
 
   @include for-size(desktop) {
-    max-width: 23%;
+    max-width: 32%;
   }
 
   p {
@@ -81,20 +82,37 @@ main {
 
   #levelSelect {
     margin: 0;
-    padding: 0;
+    padding: 4px;
     border: none;
     box-shadow: 0px 0px 3px #f89204;
     border-radius: 5px;
     padding: 2px;
     background-color: #f7ce2b;
     text-align: center;
-    font-size: 1rem;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Protest Revolution', 'Courier New', Courier, monospace;
   }
+
+  .currentMode {
+    border: 1px solid #f89204;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: #fbe17c;
+  }
+
 }
 
 
+.timer {
+  margin-top: 1%;
+  width: 90px;
+  padding: 4px;
+  font-size: 25px;
+}
+
 .info {
-  font-size: 22px;
+  font-size: 25px;
   margin: 2%;
   padding: 0;
   text-shadow: 0 0 10px #f9f9f7;

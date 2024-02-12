@@ -1,4 +1,5 @@
 @import '../../mixins/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 
 .board {
   @include basic-flexbox;
@@ -6,7 +7,7 @@
   padding: 0.3rem;
   background-color: rgba(248, 201, 46, 0.653);
   border: #ffffff 1px solid;
-
+  font-family: Protest Revolution, 'Courier New', Courier, monospace;
   margin: 0 auto;
 }
 

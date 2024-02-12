@@ -1,21 +1,28 @@
 @import '../../mixins/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 
 button {
   background-color: rgb(146, 90, 21);
+
+  height: 50px;
+  width: 150px;
   color: #ffffff;
   font-size: 1rem;
-  padding: 0.3rem 0.8rem;
-  border: 2px solid #ffffff;
-  box-shadow: 0px 0px 0px 2px #f3cd239f;
+  padding: 0.5rem 1rem;
+  border: 2px solid #f9c108;
+  box-shadow: 0px 0px 0px 2px #f3cd239f inset;
   border-radius: 5px;
+  font-family: 'Protest Revolution', 'Courier New', Courier, monospace;
+  cursor: pointer;
+  transition-duration: 0.3s;
 
   &:hover {
-    background-color: #f3cd2376;
+    background-color: #f3cd23;
     color: #000000;
   }
 
   &:active {
-    background-color: #f2e598;
+    background-color: #f8d50c;
     color: #000000;
     transition-duration: 0.2s;
   }
