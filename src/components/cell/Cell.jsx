@@ -16,8 +16,8 @@ const Cell = ({ cell, onClick, onContextMenu }) => {
     } else {
       return null;
     }
-
   };
+  
   const getNumberColor = (number) => {
     switch (number) {
       case 1:

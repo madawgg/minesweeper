@@ -2,7 +2,7 @@ import './footer.scss'
 const Footer = () => {
   return (
     <footer>
-      <h2>Actividad Evaluable Final DIW 23/24</h2>
+      <h2>Every decision could be the last. Will you survive ?</h2>
     </footer>
   );
 };
