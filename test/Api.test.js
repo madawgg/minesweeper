@@ -3,7 +3,7 @@ import ApiClient from '../src/Services/ApiClient';
 import { expect } from '@jest/globals';
 import { test } from '@jest/globals';
 
-const apiURL = 'https://quiet-kangaroo-2938f6.netlify.app/';
+const apiURL = 'http://localhost:9988';
 
 test('gets the board data', async () => {
 
@@ -18,7 +18,7 @@ test('gets the board data', async () => {
   expect(levelData.rows).toBeGreaterThan(0);
 });
 
-test('gets the board data', async () => {
+test('gets the board data 2', async () => {
 
   //Arrange
   const apiClient = new ApiClient(apiURL);

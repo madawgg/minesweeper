@@ -1,0 +1,27 @@
+.instructionsView {
+  position: relative;
+  top: 10%;
+  left: 0;
+  background-color: rgb(222, 209, 133);
+  width: 60%;
+  margin: 0 auto;
+  padding: 2%;
+  border: 2px solid #f89204;
+  box-shadow: 0 0 10px #f3ae0f;
+  border-radius: 10px;
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    width: 80%;
+    margin: 0 auto;
+    text-align: start;
+    padding: 10px;
+  }
+
+  h3 {
+
+    font-size: 1.8rem;
+  }
+}

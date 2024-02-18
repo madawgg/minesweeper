@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 import Board from '../Domain/Board.js';
 import ApiClient from '../Services/ApiClient.js';
 import BoardComponent from './board/Board.jsx';
-import FinalView from '../views/FinalView.jsx';
+import FinalView from '../overlays/FinalView.jsx';
 import Button from './button/Button.jsx';
 import horizontal from '../../media/img/girarHorizontal.gif';
 import './game.scss';
+import InstructionsView from '../overlays/InstructionsView.jsx';
 
 const Game = () => {
   const [board, setBoard] = useState(null);
   const [level, setLevel] = useState(0);
-  const [gameStatus, setGameStatus] = useState('waiting...');
+  const [gameStatus, setGameStatus] = useState('waiting');
   const [time, setTime] = useState(0);
   const [isFlagMode, setIsFlagMode] = useState(false);
   const [updateCounter, setUpdateCounter] = useState(0);
@@ -29,7 +30,7 @@ const Game = () => {
   }, [isLandscape])
   useEffect(() => {
 
-    const apiClient = new ApiClient('https://quiet-kangaroo-2938f6.netlify.app/');
+    const apiClient = new ApiClient('https://65cc0096b451fc40ab8858ee--minesweepersdiw.netlify.app');
     apiClient.getLevel(level)
       .then((data) => {
         const { columns, rows, mines } = data;
@@ -44,7 +45,7 @@ const Game = () => {
 
   const handleCellClick = (row, column) => {
 
-    setGameStatus('exploring...');
+    setGameStatus('exploring');
 
     if (board) {
       try {
@@ -75,11 +76,9 @@ const Game = () => {
       }
     }
   }
-  // useEffect(() => {
-  //   console.log(gameStatus)
-  // }, [gameStatus]);
+
   useEffect(() => {
-    if (gameStatus === 'exploring...') {
+    if (gameStatus === 'exploring') {
       const interval = setInterval(() => {
         setTime(time + 1);
       }, 1000);
@@ -102,10 +101,14 @@ const Game = () => {
     setGameStatus('waiting');
     setMode('🔍');
   }
+  const gameInfo = gameStatus === 'information';
 
   return (
 
+
     <main >
+
+
       {!isLandscape &&
         <div className="rotate-device">
           <h1> Please, rotate your <br /> device to play the game</h1>
@@ -114,6 +117,12 @@ const Game = () => {
       }
       {isLandscape &&
         <>
+
+          <Button
+            onClick={() => gameInfo ? setGameStatus('exploring') : setGameStatus('information')}
+            text={'Instructions'}
+          />
+          {gameInfo && <InstructionsView onClick={resetGame} />}
           <div className='container'>
             <section className='infoBox'>
 

@@ -1,10 +1,11 @@
 /* eslint react/prop-types: 0 */
+import React from 'react';
 import '../../Domain/BoardCell.js';
 import '../../Domain/Board.js';
 import './cell.scss';
 
 
-const Cell = ({ cell, onClick, onContextMenu }) => {
+export const Cell = ({ cell, onClick, onContextMenu }) => {
   const cellKey = `${cell.row}-${cell.column}`;
   const cellContent = (cell) => {
     if (cell.defused) {
@@ -17,7 +18,7 @@ const Cell = ({ cell, onClick, onContextMenu }) => {
       return null;
     }
   };
-  
+
   const getNumberColor = (number) => {
     switch (number) {
       case 1:
@@ -42,6 +43,7 @@ const Cell = ({ cell, onClick, onContextMenu }) => {
       onClick={onClick}
       onContextMenu={onContextMenu}
       style={{ color: numberColor }}
+      data-testid="cell"
     >
       {cellContent(cell)}
     </div>

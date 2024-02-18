@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-
+import React from 'react';
 import './board.scss';
 import Cell from '../cell/Cell.jsx';
 

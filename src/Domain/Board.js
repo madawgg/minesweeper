@@ -16,9 +16,8 @@ export default class Board {
     this.columns = this.buildBoard(rows, columns);
     this.flaggedCount = 0;
     this.win = false;
-
-
   }
+
   //ampliación
   setWin = () => {
     this.win = true;
@@ -200,7 +199,8 @@ export default class Board {
     this._calculateRemainingMinesCount();
 
     if ((this._defusedCells() + this.flaggedCount) === totalCells && this.allMinesFlagged()) {
-      return this.setWin();
+      this.setWin();
+      return this;
     }
 
     return this;
